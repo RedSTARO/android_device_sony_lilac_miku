@@ -31,6 +31,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := Sony/G8441/G8441:9/47.2.A.11.228/3311891731:user/release-keys
 
-###modified for miku
-MIKU_GAPPS := true
+## Modified for miku
+# MIKU_GAPPS := true
 MIKU_MASTER := RedSTAR
