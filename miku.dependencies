@@ -1,10 +1,10 @@
 [
   {
-    "repository": "RedSTARO/android_kernel_sony_msm8998",
+    "repository": "whatawurst/android_kernel_sony_msm8998",
     "target_path": "kernel/sony/msm8998"
   },
   {
-    "repository": "RedSTARO/android_device_sony_yoshino-common",
+    "repository": "whatawurst/android_device_sony_yoshino-common",
     "target_path": "device/sony/yoshino-common"
   }
 ]
