@@ -42,6 +42,7 @@ git apply device/sony/lilac/patch/ActivityTaskManagerService.java.patch
 
 green_echo "Dropping something rely on LineageOS..."
 rm -rf hardware/sony/hidl
+rm -rf hardware/sony/amplifier
 git apply device/sony/lilac/patch/XperiaParts_Android.bp.patch
 
 green_echo "Removing su stuff in source code..."
