@@ -1,0 +1,15 @@
+diff --git a/hardware/sony/XperiaParts/Android.bp b/hardware/sony/XperiaParts/Android.bp
+index ad1becd..d65e369 100644
+--- a/hardware/sony/XperiaParts/Android.bp
++++ b/hardware/sony/XperiaParts/Android.bp
+@@ -13,8 +13,8 @@ android_app {
+     static_libs: [
+         "androidx.core_core",
+         "androidx.preference_preference",
+-        "org.lineageos.settings.resources",
+-        "org.lineageos.platform.internal",
++//         "org.lineageos.settings.resources",
++//         "org.lineageos.platform.internal",
+         "vendor.semc.hardware.display-V2.0-java",
+         "vendor.semc.hardware.display-V2.1-java",
+         "vendor.semc.hardware.display-V2.2-java"
