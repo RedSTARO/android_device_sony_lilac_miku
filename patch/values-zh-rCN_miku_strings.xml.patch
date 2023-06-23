@@ -1,0 +1,15 @@
+diff --git a/packages/apps/Settings/res/values-zh-rCN/miku_strings.xml b/packages/apps/Settings/res/values-zh-rCN/miku_strings.xml
+index 248bc35..9c727b5 100644
+--- a/packages/apps/Settings/res/values-zh-rCN/miku_strings.xml
++++ b/packages/apps/Settings/res/values-zh-rCN/miku_strings.xml
+@@ -82,4 +82,10 @@
+     <string name="show_navbar_gesture_bar_title">手势条</string>
+     <string name="show_navbar_gesture_bar_summary">在屏幕底部显示手势条</string>
+ 
++     <!-- Volume button music control -->
++    <string name="volume_button_music_control_title">媒体控制</string>
++    <string name="volume_button_music_control_summary">当屏幕关闭时，长按音量键可以控制上一首下一首喵~ 这下可以快速切歌了喵！</string>
++    <string name="gesture_playback_control_delay">delay</string>
++
++
+ </resources>

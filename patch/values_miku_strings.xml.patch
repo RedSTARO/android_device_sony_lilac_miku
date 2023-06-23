@@ -1,0 +1,14 @@
+diff --git a/packages/apps/Settings/res/values/miku_strings.xml b/packages/apps/Settings/res/values/miku_strings.xml
+index 4613dff..797d406 100644
+--- a/packages/apps/Settings/res/values/miku_strings.xml
++++ b/packages/apps/Settings/res/values/miku_strings.xml
+@@ -85,4 +85,9 @@
+     <string name="show_navbar_gesture_bar_title">Gesture bar</string>
+     <string name="show_navbar_gesture_bar_summary">Show gesture bar at the bottom of the screen</string>
+ 
++    <!-- Volume button music control -->
++    <string name="volume_button_music_control_title">Playback control</string>
++    <string name="volume_button_music_control_summary">When the screen is off, long-pressing volume keys will skip music tracks</string>
++    <string name="gesture_playback_control_delay">delay</string>
++
+ </resources>
