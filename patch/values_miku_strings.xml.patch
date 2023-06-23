@@ -8,7 +8,7 @@ index 4613dff..797d406 100644
  
 +    <!-- Volume button music control -->
 +    <string name="volume_button_music_control_title">Playback control</string>
-+    <string name="volume_button_music_control_summary">When the screen is off, long-pressing volume keys will skip music tracks</string>
++    <string name="volume_button_music_control_summary">When the screen is off, long-pressing volume keys will skip music tracks~ Now you can switch song more easily nya!</string>
 +    <string name="gesture_playback_control_delay">delay</string>
 +
  </resources>
