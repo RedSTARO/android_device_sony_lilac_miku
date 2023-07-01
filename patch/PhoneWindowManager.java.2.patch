@@ -1,7 +1,7 @@
-diff --git a/frameworks/base/core/java/android/provider/Settings.java b/frameworks/base/core/java/android/provider/Settings.java
+diff --git a/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java b/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java
 index 5eca634..f97d136 100644
---- a/frameworks/base/core/java/android/provider/Settings.java
-+++ b/frameworks/base/core/java/android/provider/Settings.java
+--- a/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java
++++ b/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java
 @@ -4004,7 +4004,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                          break;
                      }
