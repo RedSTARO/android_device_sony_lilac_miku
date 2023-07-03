@@ -1,7 +1,7 @@
 diff --git a/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java b/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java
 index e8c6f9d..5eca634 100644
 --- a/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java
-+++ b/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java 
++++ b/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java
 @@ -535,6 +535,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
  
      private boolean mHandleVolumeKeysInWM;
