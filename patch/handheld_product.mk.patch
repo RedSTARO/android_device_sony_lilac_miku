@@ -1,8 +1,8 @@
-diff --git a/build/make/target/product/handheld_product.mk
-index 2199c57..e89c702 100644
+diff --git a/build/make/target/product/handheld_product.mk b/build/make/target/product/handheld_product.mk
+index 3e80e94..3aaf789 100644
 --- a/build/make/target/product/handheld_product.mk
 +++ b/build/make/target/product/handheld_product.mk
-@@ -34,7 +34,8 @@ PRODUCT_PACKAGES += \
+@@ -33,7 +33,8 @@ PRODUCT_PACKAGES += \
      preinstalled-packages-platform-handheld-product.xml \
      QuickSearchBox \
      SettingsIntelligence \
@@ -10,5 +10,5 @@ index 2199c57..e89c702 100644
 +    frameworks-base-overlays \
 +    Via
  
- PRODUCT_PACKAGES_DEBUG += \
-     frameworks-base-overlays-debug
+ ifeq ($(TARGET_NO_APERTURE),true)
+     PRODUCT_PACKAGES += Camera2
