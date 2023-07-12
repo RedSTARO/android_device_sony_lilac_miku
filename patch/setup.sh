@@ -53,7 +53,7 @@ green_echo "Step1..."
 touch packages/apps/Settings/res/xml/volume_button_music_control_gesture_settings.xml
 touch packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlGestureSettings.java
 touch packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlPreferenceController.java
-git apply device/sony/lilac/patch/gestures.xml.patch
+git apply device/sony/lilac/patch/volumeKeyPlaybackControl/gestures.xml.patch
 git apply device/sony/lilac/patch/volumeKeyPlaybackControl/GesturesSettingPreferenceController.java.patch
 git apply device/sony/lilac/patch/volumeKeyPlaybackControl/values_miku_strings.xml.patch
 git apply device/sony/lilac/patch/volumeKeyPlaybackControl/values-zh-rCN_miku_strings.xml.patch
