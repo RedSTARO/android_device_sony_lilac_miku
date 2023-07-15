@@ -14,7 +14,8 @@ DEVICE_PATH := device/sony/lilac
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH)
+    $(DEVICE_PATH) \
+    vendor/qcom/perf
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -28,4 +29,8 @@ DEVICE_PACKAGE_OVERLAYS += \
 ### POWER
 TARGET_USE_CUSTOM_POWERHINT := true
 
+### Permissions
+$(call inherit-product, $(LOCAL_PATH)/android/permissions/boost_framework_permissions.mk)
+
+### import all .mk file in device/
 include $(DEVICE_PATH)/device/*.mk
