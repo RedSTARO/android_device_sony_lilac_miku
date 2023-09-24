@@ -27,7 +27,7 @@ cp device/sony/lilac/patch/bootanimation/bootanimation.zip vendor/miku/bootanima
 green_echo "Adding via browser..."
 rm -rf packages/apps/via
 mkdir packages/apps/via
-curl https://res.viayoo.com/v1/via-release-cn.apk > packages/apps/via/via.apk
+curl --noproxy "*" https://res.viayoo.com/v1/via-release-cn.apk > packages/apps/via/via.apk
 touch packages/apps/via/Android.mk
 git apply device/sony/lilac/patch/builtInViaBrowser/handheld_product.mk.patch
 git apply device/sony/lilac/patch/builtInViaBrowser/via_Android.mk.patch
