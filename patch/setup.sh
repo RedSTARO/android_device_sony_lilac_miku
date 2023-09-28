@@ -15,7 +15,7 @@ function green_echo {
 #   exit 1
 # fi
 
-work_dir=/home/r/vdisk/miku/
+work_dir=/home/r/miku/
 
 green_echo "Entering working dir..."
 cd "$work_dir"
