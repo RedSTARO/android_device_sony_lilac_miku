@@ -1,0 +1,208 @@
+From 208ae52e02c7d5047e32d2b9a5fac7931dc493f4 Mon Sep 17 00:00:00 2001
+From: RedSTARO <822858602@qq.com>
+Date: Thu, 5 Oct 2023 19:57:01 +0800
+Subject: [PATCH] Add Long press volume key media control
+
+Change-Id: I13a35a63f1c4be632c19232fbde1eeae2b615fbd
+---
+ res/xml/gestures.xml                          |  7 +++
+ ..._button_music_control_gesture_settings.xml | 32 ++++++++++
+ .../GesturesSettingPreferenceController.java  |  1 +
+ ...lumeButtonMusicControlGestureSettings.java | 44 +++++++++++++
+ ...uttonMusicControlPreferenceController.java | 63 +++++++++++++++++++
+ 5 files changed, 147 insertions(+)
+ create mode 100644 res/xml/volume_button_music_control_gesture_settings.xml
+ create mode 100644 src/com/android/settings/gestures/VolumeButtonMusicControlGestureSettings.java
+ create mode 100644 src/com/android/settings/gestures/VolumeButtonMusicControlPreferenceController.java
+
+diff --git a/packages/apps/Settings/res/xml/gestures.xml b/packages/apps/Settings/res/xml/gestures.xml
+index 48813606fe..c777aff461 100644
+--- a/packages/apps/Settings/res/xml/gestures.xml
++++ b/packages/apps/Settings/res/xml/gestures.xml
+@@ -92,4 +92,11 @@
+         android:title="@string/gesture_prevent_ringing_screen_title"
+         android:fragment="com.android.settings.gestures.PreventRingingGestureSettings"
+         settings:controller="com.android.settings.gestures.PreventRingingParentPreferenceController" />
++
++    <Preference
++        android:key="volume_button_music_control_sumary"
++        android:title="@string/volume_button_music_control_title"
++        android:fragment="com.android.settings.gestures.VolumeButtonMusicControlGestureSettings"
++        settings:controller="com.android.settings.gestures.VolumeButtonMusicControlPreferenceController" />
++
+ </PreferenceScreen>
+diff --git a/packages/apps/Settings/res/xml/volume_button_music_control_gesture_settings.xml b/packages/apps/Settings/res/xml/volume_button_music_control_gesture_settings.xml
+new file mode 100644
+index 0000000000..65b3c1786a
+--- /dev/null
++++ b/packages/apps/Settings/res/xml/volume_button_music_control_gesture_settings.xml
+@@ -0,0 +1,32 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Copyright 2019 Paranoid Android
++     Licensed under the Apache License, Version 2.0 (the "License");
++     you may not use this file except in compliance with the License.
++     You may obtain a copy of the License at
++          http://www.apache.org/licenses/LICENSE-2.0
++     Unless required by applicable law or agreed to in writing, software
++     distributed under the License is distributed on an "AS IS" BASIS,
++     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++     See the License for the specific language governing permissions and
++     limitations under the License.
++-->
++
++<PreferenceScreen
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:settings="http://schemas.android.com/apk/res-auto"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:key="volume_button_music_control_screen"
++    android:title="@string/volume_button_music_control_title">
++
++    <com.android.settingslib.widget.IllustrationPreference
++        android:key="volume_button_music_control_video"
++        settings:searchable="false"
++        app:lottie_rawRes="@raw/lottie_volume_button_music_control" />
++
++    <SwitchPreference
++        android:key="volume_button_music_control"
++        android:title="@string/volume_button_music_control_title"
++        android:summary="@string/volume_button_music_control_summary"
++        app:controller="com.android.settings.gestures.VolumeButtonMusicControlPreferenceController" />
++
++</PreferenceScreen>
+\ No newline at end of file
+diff --git a/packages/apps/Settings/src/com/android/settings/gestures/GesturesSettingPreferenceController.java b/packages/apps/Settings/src/com/android/settings/gestures/GesturesSettingPreferenceController.java
+index ff069ab358..cedcc44dbc 100644
+--- a/packages/apps/Settings/src/com/android/settings/gestures/GesturesSettingPreferenceController.java
++++ b/packages/apps/Settings/src/com/android/settings/gestures/GesturesSettingPreferenceController.java
+@@ -77,6 +77,7 @@ public class GesturesSettingPreferenceController extends BasePreferenceControlle
+         controllers.add(new DoubleTapScreenPreferenceController(context, FAKE_PREF_KEY)
+                 .setConfig(ambientDisplayConfiguration));
+         controllers.add(new PreventRingingParentPreferenceController(context, FAKE_PREF_KEY));
++        controllers.add(new VolumeButtonMusicControlPreferenceController(context, FAKE_PREF_KEY));
+         return controllers;
+     }
+ }
+diff --git a/packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlGestureSettings.java b/packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlGestureSettings.java
+new file mode 100644
+index 0000000000..338d381653
+--- /dev/null
++++ b/packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlGestureSettings.java
+@@ -0,0 +1,44 @@
++/*
++ * Copyright (C) 2019 Paranoid Android
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package com.android.settings.gestures;
++
++import com.android.settings.R;
++import com.android.settings.dashboard.DashboardFragment;
++import com.android.settings.search.BaseSearchIndexProvider;
++
++public class VolumeButtonMusicControlGestureSettings extends DashboardFragment {
++
++    private static final String TAG = "VolumeButtonMusicControlGestureSettings";
++
++    @Override
++    public int getMetricsCategory() {
++        return -1;
++    }
++
++    @Override
++    protected String getLogTag() {
++        return TAG;
++    }
++
++    @Override
++    protected int getPreferenceScreenResId() {
++        return R.xml.volume_button_music_control_gesture_settings;
++    }
++
++    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
++            new BaseSearchIndexProvider(R.xml.volume_button_music_control_gesture_settings);
++}
+\ No newline at end of file
+diff --git a/packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlPreferenceController.java b/packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlPreferenceController.java
+new file mode 100644
+index 0000000000..05544d6075
+--- /dev/null
++++ b/packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlPreferenceController.java
+@@ -0,0 +1,63 @@
++/*
++ * Copyright (C) 2019 Paranoid Android
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package com.android.settings.gestures;
++
++import static android.provider.Settings.System.VOLBTN_MUSIC_CONTROLS;
++
++import android.content.Context;
++import android.os.UserHandle;
++import android.provider.Settings;
++import android.text.TextUtils;
++
++public class VolumeButtonMusicControlPreferenceController extends GesturePreferenceController {
++
++    private final int ON = 1;
++    private final int OFF = 0;
++
++    private static final String PREF_KEY_VIDEO = "volume_button_music_control_video";
++
++    public VolumeButtonMusicControlPreferenceController(Context context, String key) {
++        super(context, key);
++    }
++
++    @Override
++    public int getAvailabilityStatus() {
++        return AVAILABLE;
++    }
++
++    @Override
++    public boolean isSliceable() {
++        return TextUtils.equals(getPreferenceKey(), "volume_button_music_control");
++    }
++
++    @Override
++    protected String getVideoPrefKey() {
++        return PREF_KEY_VIDEO;
++    }
++
++    @Override
++    public boolean isChecked() {
++        return Settings.System.getIntForUser(mContext.getContentResolver(), VOLBTN_MUSIC_CONTROLS,
++                OFF, UserHandle.USER_CURRENT) == ON;
++    }
++
++    @Override
++    public boolean setChecked(boolean isChecked) {
++        return Settings.System.putIntForUser(mContext.getContentResolver(), VOLBTN_MUSIC_CONTROLS,
++                isChecked ? ON : OFF, UserHandle.USER_CURRENT);
++    }
++}
+\ No newline at end of file
+-- 
+2.34.1
+
