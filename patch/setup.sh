@@ -48,30 +48,31 @@ git apply device/sony/lilac/patch/removeLOSStuff/XperiaParts_Android.bp.patch
 green_echo "Removing su stuff in source code..."
 rm -rf system/extras/su
 
-green_echo "Adding volume key long press playback control..."
-green_echo "Step1..."
-touch packages/apps/Settings/res/xml/volume_button_music_control_gesture_settings.xml
-touch packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlGestureSettings.java
-touch packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlPreferenceController.java
-# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/gestures.xml.patch
-# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/GesturesSettingPreferenceController.java.patch
-# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/values_miku_strings.xml.patch
-# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/values-zh-rCN_miku_strings.xml.patch
-git apply device/sony/lilac/patch/volumeKeyPlaybackControl/volume_button_music_control_gesture_settings.xml.patch
-git apply device/sony/lilac/patch/volumeKeyPlaybackControl/VolumeButtonMusicControlGestureSettings.java.patch
-git apply device/sony/lilac/patch/volumeKeyPlaybackControl/VolumeButtonMusicControlPreferenceController.java.patch
-green_echo "Step2..."
-git apply device/sony/lilac/patch/volumeKeyPlaybackControl/Settings.java.patch
-# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/PhoneWindowManager.java.patch
-green_echo "Step3..."
-git apply device/sony/lilac/patch/volumeKeyPlaybackControl/Udon/0001-Add-Long-press-volume-key-media-control.frameworks_base.patch
-git apply device/sony/lilac/patch/volumeKeyPlaybackControl/Udon/0001-Add-Long-press-volume-key-media-control.packages_apps_Settings.patch
-# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/PhoneWindowManager.java.2.patch
-green_echo "Step4..."
-touch packages/apps/Settings/res/raw-night/lottie_volume_button_music_control.json
-touch packages/apps/Settings/res/raw/lottie_volume_button_music_control.json
-git apply device/sony/lilac/patch/volumeKeyPlaybackControl/raw_lottie_volume_button_music_control.json.patch
-git apply device/sony/lilac/patch/volumeKeyPlaybackControl/raw-night_lottie_volume_button_music_control.json.patch
+# Not apply patch below by defult
+# green_echo "Adding volume key long press playback control..."
+# green_echo "Step1..."
+# touch packages/apps/Settings/res/xml/volume_button_music_control_gesture_settings.xml
+# touch packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlGestureSettings.java
+# touch packages/apps/Settings/src/com/android/settings/gestures/VolumeButtonMusicControlPreferenceController.java
+# # git apply device/sony/lilac/patch/volumeKeyPlaybackControl/gestures.xml.patch
+# # git apply device/sony/lilac/patch/volumeKeyPlaybackControl/GesturesSettingPreferenceController.java.patch
+# # git apply device/sony/lilac/patch/volumeKeyPlaybackControl/values_miku_strings.xml.patch
+# # git apply device/sony/lilac/patch/volumeKeyPlaybackControl/values-zh-rCN_miku_strings.xml.patch
+# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/volume_button_music_control_gesture_settings.xml.patch
+# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/VolumeButtonMusicControlGestureSettings.java.patch
+# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/VolumeButtonMusicControlPreferenceController.java.patch
+# green_echo "Step2..."
+# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/Settings.java.patch
+# # git apply device/sony/lilac/patch/volumeKeyPlaybackControl/PhoneWindowManager.java.patch
+# green_echo "Step3..."
+# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/Udon/0001-Add-Long-press-volume-key-media-control.frameworks_base.patch
+# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/Udon/0001-Add-Long-press-volume-key-media-control.packages_apps_Settings.patch
+# # git apply device/sony/lilac/patch/volumeKeyPlaybackControl/PhoneWindowManager.java.2.patch
+# green_echo "Step4..."
+# touch packages/apps/Settings/res/raw-night/lottie_volume_button_music_control.json
+# touch packages/apps/Settings/res/raw/lottie_volume_button_music_control.json
+# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/raw_lottie_volume_button_music_control.json.patch
+# git apply device/sony/lilac/patch/volumeKeyPlaybackControl/raw-night_lottie_volume_button_music_control.json.patch
 
 
 green_echo "Setup finished, now u can start compile ur MikuUI~"
