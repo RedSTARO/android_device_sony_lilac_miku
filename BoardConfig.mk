@@ -28,6 +28,7 @@ TARGET_BOOTLOADER_BOARD_NAME := G8441
 TARGET_KERNEL_CONFIG := miku-msm8998-yoshino-lilac_defconfig
 
 BOARD_KERNEL_CMDLINE += androidboot.hardware=lilac
+TARGET_KERNEL_CLANG_VERSION := r450784e
 
 ### PARTITIONS
 # See also /proc/partitions on the device
