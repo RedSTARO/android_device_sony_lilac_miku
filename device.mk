@@ -34,3 +34,7 @@ $(call inherit-product, $(LOCAL_PATH)/android/permissions/boost_framework_permis
 
 ### import all .mk file in device/
 include $(DEVICE_PATH)/device/*.mk
+
+### Miku
+MIKU_MASTER := RedSTAR
+
