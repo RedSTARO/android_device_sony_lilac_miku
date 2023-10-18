@@ -38,4 +38,4 @@ include $(DEVICE_PATH)/device/*.mk
 ### Miku
 MIKU_MASTER := RedSTAR
 TARGET_WITH_KERNEL_SU := true
-MIKU_GAPPS := false
+# MIKU_GAPPS := false
