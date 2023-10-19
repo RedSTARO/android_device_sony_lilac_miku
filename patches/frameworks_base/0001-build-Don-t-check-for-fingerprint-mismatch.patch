@@ -1,0 +1,47 @@
+From f9659101e4bcc66463fb8d9abb2524b8514a17ed Mon Sep 17 00:00:00 2001
+From: Dan Cartier <nospamdan1@gmail.com>
+Date: Thu, 24 Oct 2019 10:14:49 -0400
+Subject: [PATCH] build: Don't check for fingerprint mismatch
+
+* This removes the warning that sidplays at boot which states:
+  "There is an internal problem with your device.  Contact the manufacturer for details"
+
+Signed-off-by: Dan Cartier <nospamdan1@gmail.com>
+Change-Id: I5515f204bcdbe0a792f95aa1ab321fe4a8fd2696
+---
+ core/java/android/os/Build.java | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/core/java/android/os/Build.java b/core/java/android/os/Build.java
+index 9f9c2222f9d9..b45c2a5d84ba 100755
+--- a/core/java/android/os/Build.java
++++ b/core/java/android/os/Build.java
+@@ -1305,7 +1305,7 @@ public class Build {
+      */
+     public static boolean isBuildConsistent() {
+         // Don't care on eng builds.  Incremental build may trigger false negative.
+-        if (IS_ENG) return true;
++        /*if (IS_ENG) return true;
+ 
+         if (IS_TREBLE_ENABLED) {
+             // If we can run this code, the device should already pass AVB.
+@@ -1318,6 +1318,7 @@ public class Build {
+             }
+ 
+             return result == 0;
++            return true;
+         }
+ 
+         final String system = SystemProperties.get("ro.system.build.fingerprint");
+@@ -1340,7 +1341,7 @@ public class Build {
+                         + " but vendor reported " + vendor);
+                 return false;
+             }
+-        }
++        }*/
+ 
+         /* TODO: Figure out issue with checks failing
+         if (!TextUtils.isEmpty(bootimage)) {
+-- 
+2.25.1
+
