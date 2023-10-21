@@ -111,5 +111,5 @@ for dir in "${!target_dirs[@]}"; do
     green_echo "Source or target directory not found for $dir, skipping..."
   fi
 done
-
+cd $work_dir
 green_echo "Patch application complete."
