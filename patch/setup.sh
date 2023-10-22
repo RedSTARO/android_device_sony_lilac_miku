@@ -40,19 +40,20 @@ rm -rf system/extras/su
 
 green_echo "Apply Udon patches..."
 # Set patch stored dir
-source_dir="/home/r/miku/device/sony/lilac/patch/Udon"
+source_dir="$work_dir/device/sony/lilac/patch/Udon"
 
 # Set mapping of dirs
 declare -A target_dirs
-target_dirs["bionic"]="/home/r/miku/bionic"
-target_dirs["build_make"]="/home/r/miku/build/make"
-target_dirs["frameworks_base"]="/home/r/miku/frameworks/base"
-target_dirs["frameworks_libs_net"]="/home/r/miku/frameworks/libs/net"
-target_dirs["frameworks_opt_telephony"]="/home/r/miku/frameworks/opt/telephony"
-target_dirs["packages_modules_Connectivity"]="/home/r/miku/packages/modules/Connectivity"
-target_dirs["system_bpf"]="/home/r/miku/system/bpf"
-target_dirs["system_libhidl"]="/home/r/miku/system/libhidl"
-target_dirs["system_netd"]="/home/r/miku/system/netd"
+target_dirs["bionic"]="$work_dir/bionic"
+target_dirs["build_make"]="$work_dir/build/make"
+target_dirs["frameworks_base"]="$work_dir/frameworks/base"
+target_dirs["frameworks_libs_net"]="$work_dir/frameworks/libs/net"
+target_dirs["frameworks_opt_telephony"]="$work_dir/frameworks/opt/telephony"
+target_dirs["packages_modules_Connectivity"]="$work_dir/packages/modules/Connectivity"
+target_dirs["system_bpf"]="$work_dir/system/bpf"
+target_dirs["system_libhidl"]="$work_dir/system/libhidl"
+target_dirs["system_netd"]="$work_dir/system/netd"
+target_dirs["device_qcom_sepolicy-legacy-um_legacy_vendor_common"]="$work_dir/device/qcom/sepolicy-legacy-um/legacy/vendor/common"
 
 # Apply patches
 for dir in "${!target_dirs[@]}"; do
