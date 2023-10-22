@@ -22,11 +22,11 @@ $(call inherit-product, vendor/miku/build/product/miku_product.mk)
 PRODUCT_NAME := miku_lilac
 PRODUCT_DEVICE := lilac
 PRODUCT_BRAND := Sony
-PRODUCT_MODEL := G8441
+PRODUCT_MODEL := SO-02K
 PRODUCT_MANUFACTURER := Sony
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=lilac \
-   PRIVATE_BUILD_DESC="G8441-user 9 47.2.A.11.228 3311891731 release-keys"
+   PRIVATE_BUILD_DESC="SO-02K-user 9 47.2.A.11.228 3311891731 release-keys"
 
-BUILD_FINGERPRINT := Sony/G8441/G8441:9/47.2.A.11.228/3311891731:user/release-keys
+BUILD_FINGERPRINT := Sony/SO-02K/SO-02K:9/47.2.A.11.228/3311891731:user/release-keys
