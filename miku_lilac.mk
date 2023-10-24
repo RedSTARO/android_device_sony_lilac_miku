@@ -22,7 +22,7 @@ $(call inherit-product, vendor/miku/build/product/miku_product.mk)
 PRODUCT_NAME := miku_lilac
 PRODUCT_DEVICE := lilac
 PRODUCT_BRAND := Sony
-PRODUCT_MODEL := G8441
+PRODUCT_MODEL := SO-02K
 PRODUCT_MANUFACTURER := Sony
 
 PRODUCT_BUILD_PROP_OVERRIDES += \

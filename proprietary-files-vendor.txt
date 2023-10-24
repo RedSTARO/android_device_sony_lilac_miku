@@ -347,10 +347,10 @@ vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libvpplibrary.so
 
 # NFC
-vendor/etc/libnfc-nci.conf
-vendor/etc/libnfc-nxp-octopus.conf
-vendor/etc/libnfc-nxp.conf
-vendor/lib/libpn553_fw.so
+# vendor/etc/libnfc-nci.conf
+# vendor/etc/libnfc-nxp-octopus.conf
+# vendor/etc/libnfc-nxp.conf
+# vendor/lib/libpn553_fw.so
 
 # QMI
 vendor/bin/mlog_qmi_service

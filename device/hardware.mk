@@ -13,5 +13,5 @@
 # limitations under the License.
 
 # NFC
-PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.1-service
+# PRODUCT_PACKAGES += \
+    # android.hardware.nfc@1.1-service
