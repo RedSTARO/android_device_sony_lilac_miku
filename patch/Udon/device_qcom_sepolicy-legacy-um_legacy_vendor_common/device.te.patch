@@ -1,7 +1,7 @@
-diff --git a/device.te b/device.te
+diff --git a/device/qcom/sepolicy-legacy-um/legacy/vendor/common/device.te b/device/qcom/sepolicy-legacy-um/legacy/vendor/common/device.te
 index c0fbe99..07c2566 100644
---- a/device.te
-+++ b/device.te
+--- a/device/qcom/sepolicy-legacy-um/legacy/vendor/common/device.te
++++ b/device/qcom/sepolicy-legacy-um/legacy/vendor/common/device.te
 @@ -163,7 +163,7 @@ type avtimer_device, dev_type;
  type at_device, dev_type;
  
