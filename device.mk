@@ -3,13 +3,6 @@ $(call inherit-product, device/sony/yoshino-common/platform.mk)
 ### PROPRIETARY VENDOR FILES
 $(call inherit-product, vendor/sony/lilac/lilac-vendor.mk)
 
-ifeq ($(WITH_FDROID),true)
-$(call inherit-product, vendor/fdroid/fdroid-vendor.mk)
-endif
-ifeq ($(WITH_MICROG),true)
-$(call inherit-product, vendor/microg/microg-vendor.mk)
-endif
-
 DEVICE_PATH := device/sony/lilac
 
 # Soong

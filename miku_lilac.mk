@@ -15,7 +15,7 @@ TARGET_SCREEN_WIDTH := 720
 TARGET_BOOTANIMATION_HALF_RES := true
 
 
-#inhert some common miku stuff
+# Inhert some common miku stuff
 $(call inherit-product, vendor/miku/build/product/miku_product.mk)
 
 ## Device identifier. This must come after all inclusions
