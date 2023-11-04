@@ -9,13 +9,13 @@ Subject: [PATCH] build: Don't check for fingerprint mismatch
 Signed-off-by: Dan Cartier <nospamdan1@gmail.com>
 Change-Id: I5515f204bcdbe0a792f95aa1ab321fe4a8fd2696
 ---
- core/java/android/os/Build.java | 5 +++--
+ frameworks/base/core/java/android/os/Build.java | 5 +++--
  1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/core/java/android/os/Build.java b/core/java/android/os/Build.java
+diff --git a/frameworks/base/core/java/android/os/Build.java b/frameworks/base/core/java/android/os/Build.java
 index 9f9c2222f9d9..b45c2a5d84ba 100755
---- a/core/java/android/os/Build.java
-+++ b/core/java/android/os/Build.java
+--- a/frameworks/base/core/java/android/os/Build.java
++++ b/frameworks/base/core/java/android/os/Build.java
 @@ -1305,7 +1305,7 @@ public class Build {
       */
      public static boolean isBuildConsistent() {

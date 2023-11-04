@@ -31,6 +31,7 @@ include $(DEVICE_PATH)/device/*.mk
 ### Miku
 MIKU_MASTER := RedSTAR
 TARGET_WITH_KERNEL_SU := true
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/bootanimation/bootanimation.zip:$(PRODUCT_OUT)/system/media/bootanimation.zip
 
 # Via browser only need if no Gapps (Chrome)
 MIKU_GAPPS ?= false

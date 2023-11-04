@@ -20,9 +20,9 @@ work_dir=/home/r/miku/
 green_echo "Entering working dir..."
 cd "$work_dir"
 
-green_echo "Replacing 720p boot animation..."
-rm -rf vendor/miku/bootanimation/bootanimation.zip
-cp device/sony/lilac/patch/bootanimation/bootanimation.zip vendor/miku/bootanimation/bootanimation.zip
+# green_echo "Replacing 720p boot animation..."
+# rm -rf vendor/miku/bootanimation/bootanimation.zip
+# cp device/sony/lilac/prebuilt/bootanimation/bootanimation.zip vendor/miku/bootanimation/bootanimation.zip
 
 
 green_echo "Updating kernelSU..."
@@ -38,8 +38,7 @@ git apply device/sony/lilac/patch/removeLOSStuff/XperiaParts_Android.bp.patch
 green_echo "Removing su stuff in source code..."
 rm -rf system/extras/su
 
-green_echo "Apply Udon patches..."
-git apply $work_dir/device/sony/lilac/patch/Udon/device_qcom_sepolicy-legacy-um_legacy_vendor_common/device.te.patch
-cd $work_dir
+green_echo "Removing fingerprint mismatch hint..."
+git apply device/sony/lilac/patch/frameworks_base/0001-build-Don-t-check-for-fingerprint-mismatch.patch
 
 green_echo "Setup finished, now u can start compile ur MikuUI~"
