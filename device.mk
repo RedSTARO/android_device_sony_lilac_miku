@@ -34,3 +34,14 @@ $(call inherit-product, $(LOCAL_PATH)/android/permissions/boost_framework_permis
 
 ### import all .mk file in device/
 include $(DEVICE_PATH)/device/*.mk
+
+### Miku
+MIKU_MASTER := RedSTAR
+TARGET_WITH_KERNEL_SU := true
+
+# Via browser only need if no Gapps (Chrome)
+MIKU_GAPPS ?= false
+ifeq ($(MIKU_GAPPS), false)
+    PRODUCT_PACKAGES += Via
+endif
+
