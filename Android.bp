@@ -1,2 +1,12 @@
 soong_namespace {
 }
+
+android_app_import {
+	name: "Via",
+	apk: "prebuilt/via/via.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	soc_specific: true,
+}

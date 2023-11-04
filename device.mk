@@ -3,13 +3,6 @@ $(call inherit-product, device/sony/yoshino-common/platform.mk)
 ### PROPRIETARY VENDOR FILES
 $(call inherit-product, vendor/sony/lilac/lilac-vendor.mk)
 
-ifeq ($(WITH_FDROID),true)
-$(call inherit-product, vendor/fdroid/fdroid-vendor.mk)
-endif
-ifeq ($(WITH_MICROG),true)
-$(call inherit-product, vendor/microg/microg-vendor.mk)
-endif
-
 DEVICE_PATH := device/sony/lilac
 
 # Soong
@@ -38,4 +31,11 @@ include $(DEVICE_PATH)/device/*.mk
 ### Miku
 MIKU_MASTER := RedSTAR
 TARGET_WITH_KERNEL_SU := true
-# MIKU_GAPPS := false
+# PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/bootanimation/bootanimation.zip:$(PRODUCT_OUT)/system/media/bootanimation.zip
+
+# Via browser only need if no Gapps (Chrome)
+MIKU_GAPPS ?= false
+ifeq ($(MIKU_GAPPS), false)
+    PRODUCT_PACKAGES += Via
+endif
+
