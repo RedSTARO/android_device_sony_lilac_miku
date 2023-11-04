@@ -20,11 +20,6 @@ work_dir=/home/r/miku/
 green_echo "Entering working dir..."
 cd "$work_dir"
 
-green_echo "Replacing 720p boot animation..."
-rm -rf vendor/miku/bootanimation/bootanimation.zip
-cp device/sony/lilac/prebuilt/bootanimation/bootanimation.zip vendor/miku/bootanimation/bootanimation.zip
-
-
 green_echo "Updating kernelSU..."
 cd "$work_dir/kernel/sony/msm8998"
 curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
