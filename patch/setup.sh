@@ -20,9 +20,9 @@ work_dir=/home/r/miku/
 green_echo "Entering working dir..."
 cd "$work_dir"
 
-# green_echo "Replacing 720p boot animation..."
-# rm -rf vendor/miku/bootanimation/bootanimation.zip
-# cp device/sony/lilac/prebuilt/bootanimation/bootanimation.zip vendor/miku/bootanimation/bootanimation.zip
+green_echo "Replacing 720p boot animation..."
+rm -rf vendor/miku/bootanimation/bootanimation.zip
+cp device/sony/lilac/prebuilt/bootanimation/bootanimation.zip vendor/miku/bootanimation/bootanimation.zip
 
 
 green_echo "Updating kernelSU..."
