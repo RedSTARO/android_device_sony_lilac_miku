@@ -20,18 +20,6 @@ work_dir=/home/r/miku/
 green_echo "Entering working dir..."
 cd "$work_dir"
 
-green_echo "Replacing 720p boot animation..."
-rm -rf vendor/miku/bootanimation/bootanimation.zip
-cp device/sony/lilac/patch/bootanimation/bootanimation.zip vendor/miku/bootanimation/bootanimation.zip
-
-green_echo "Adding via browser..."
-rm -rf packages/apps/via
-mkdir packages/apps/via
-curl --noproxy "*" https://res.viayoo.com/v1/via-release-cn.apk > packages/apps/via/via.apk
-touch packages/apps/via/Android.mk
-git apply device/sony/lilac/patch/builtInViaBrowser/handheld_product.mk.patch
-git apply device/sony/lilac/patch/builtInViaBrowser/via_Android.mk.patch
-
 green_echo "Updating kernelSU..."
 cd "$work_dir/kernel/sony/msm8998"
 curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
@@ -71,5 +59,8 @@ touch packages/apps/Settings/res/raw/lottie_volume_button_music_control.json
 git apply device/sony/lilac/patch/volumeKeyPlaybackControl/raw_lottie_volume_button_music_control.json.patch
 git apply device/sony/lilac/patch/volumeKeyPlaybackControl/raw-night_lottie_volume_button_music_control.json.patch
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7d27605 (lilac: Using 720p bootanimation)
 green_echo "Setup finished, now u can start compile ur MikuUI~"
