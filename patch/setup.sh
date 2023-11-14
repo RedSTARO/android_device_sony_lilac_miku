@@ -59,8 +59,4 @@ touch packages/apps/Settings/res/raw/lottie_volume_button_music_control.json
 git apply device/sony/lilac/patch/volumeKeyPlaybackControl/raw_lottie_volume_button_music_control.json.patch
 git apply device/sony/lilac/patch/volumeKeyPlaybackControl/raw-night_lottie_volume_button_music_control.json.patch
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 7d27605 (lilac: Using 720p bootanimation)
 green_echo "Setup finished, now u can start compile ur MikuUI~"
