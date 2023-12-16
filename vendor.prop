@@ -11,3 +11,6 @@ persist.vendor.radio.block_allow_data=1
 ro.vendor.perf-hal.ver=2.2
 ro.vendor.qspm.enable=true
 vendor.power.pasr.enabled=false
+
+# Graphicshttps://im.qq.com/pcqq/index.shtml
+ro.hardware.egl=adreno
