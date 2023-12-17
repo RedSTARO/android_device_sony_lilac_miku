@@ -12,5 +12,6 @@ ro.vendor.perf-hal.ver=2.2
 ro.vendor.qspm.enable=true
 vendor.power.pasr.enabled=false
 
-# Graphicshttps://im.qq.com/pcqq/index.shtml
+# Graphics
 ro.hardware.egl=adreno
+
