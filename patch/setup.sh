@@ -10,13 +10,7 @@ function green_echo {
 # # green_echo "Plz enter souce code dir: "
 # # read -r work_dir
 
-# # if [ ! -d "$work_dir" ]; then
-# #   green_echo "SETUP ERROR: dir non-exsits"
-# #   exit 1
-# # fi
-
-work_dir=/home/r/miku/
-
+work_dir=$(pwd)
 green_echo "Entering working dir..."
 cd "$work_dir"
 
